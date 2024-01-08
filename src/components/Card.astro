@@ -1,0 +1,27 @@
+---
+interface Props {
+	flagUrl: string;
+	countryName: string;
+	population: number;
+	region: string;
+	capital: string;
+}
+
+const { flagUrl, countryName, population, region, capital } = Astro.props;
+---
+
+<article class="card-country">
+	<div class="img">
+		<a href={countryName.split(' ').join('-').toLowerCase()}>
+			<img src={flagUrl} alt={`Flag from ${countryName}`} />
+		</a>
+	</div>
+	<div class="info">
+		<h2>{countryName}</h2>
+		<ul>
+			<li><strong>Population:</strong>{population}</li>
+			<li><strong>Region:</strong>{region}</li>
+			<li><strong>Capital: </strong>{capital}</li>
+		</ul>
+	</div>
+</article>

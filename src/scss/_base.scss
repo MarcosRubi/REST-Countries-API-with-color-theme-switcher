@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    transition: background .1s ease-in-out, color .3s ease-in-out;
+}
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+.items-center{
+    align-items: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.flex-column-sm{
+    flex-direction: column;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+@mixin base-768{
+    .flex-column-sm{
+        flex-direction: row;
+    }
+}

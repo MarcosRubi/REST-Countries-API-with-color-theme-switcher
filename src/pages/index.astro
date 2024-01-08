@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Filters from "../components/Filters.astro";
+import Search from "../components/Search.astro";
+
+const response = await fetch("https://restcountries.com/v3.1/all");
+const dataCountries = await response.json();
+---
+
+<Layout title="REST Countries API with color theme switcher">
+	<main>
+		<section class="controls">
+			<div class="container">
+				<div class="flex flex-column-sm justify-between">
+					<Search />
+					<Filters />
+				</div>
+			</div>
+		</section>
+		<section class="countries">
+			<div class="container">
+				{
+					dataCountries.map((country) => {
+						return (
+							<Card
+								flagUrl={country.flags.svg}
+								countryName={country.name.official}
+								population={country.population}
+								region={country.region}
+								capital={country.capital}
+							/>
+						);
+					})
+				}
+			</div>
+		</section>
+	</main>
+</Layout>

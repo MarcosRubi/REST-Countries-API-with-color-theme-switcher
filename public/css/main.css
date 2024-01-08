@@ -1,0 +1,187 @@
+[data-theme=dark] {
+  --bg-elements: hsl(209, 23%, 22%);
+  --bg-color: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --bg-input: hsl(0, 0%, 52%);
+  --shadow: rgba(255, 255, 255, 0.24);
+}
+
+[data-theme=light] {
+  --bg-color: hsl(0, 0%, 98%);
+  --bg-elements: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --bg-input: hsl(0, 0%, 52%);
+  --shadow: rgba(0, 0, 0, 0.24);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  transition: background 0.1s ease-in-out, color 0.3s ease-in-out;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-column-sm {
+  flex-direction: column;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+header {
+  padding: 2rem 0;
+  background-color: var(--bg-elements);
+}
+header .logo {
+  font-size: 1rem;
+  font-weight: 800;
+}
+header input[type=checkbox] {
+  appearance: none;
+}
+header label span {
+  padding-left: 0.5rem;
+}
+
+.controls {
+  padding: 3rem 0;
+}
+.controls input,
+.controls select {
+  height: 50px;
+  background-color: var(--bg-elements);
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  box-shadow: var(--shadow) 0px 3px 8px;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+.controls .search {
+  width: 100%;
+}
+.controls .search input {
+  max-width: 400px;
+  padding-left: 2.5rem;
+}
+.controls .search input:focus ~ label, .controls .search input:valid ~ label {
+  transform: translate(0rem, -1rem);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.controls .search svg {
+  top: 0;
+  left: 0;
+  transform: translate(0.5rem, 0.9rem);
+  pointer-events: none;
+}
+.controls .search label {
+  top: 0;
+  left: 0;
+  transform: translate(2.5rem, 1rem);
+  transition: transform 0.3s ease-in-out;
+  pointer-events: none;
+}
+.controls .filter {
+  margin: 3rem 0 2rem 0;
+}
+.controls .filter select {
+  appearance: none;
+  max-width: 200px;
+  padding: 1rem;
+  cursor: pointer;
+}
+.controls .filter select:focus-within ~ svg {
+  transform: rotate(180deg);
+}
+.controls .filter svg {
+  top: 1rem;
+  left: 10rem;
+  transition: transform 0.2s linear;
+  pointer-events: none;
+}
+.controls .filter option:first-child {
+  margin-top: 1rem;
+}
+
+.countries > div {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+.countries img {
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.card-country {
+  background-color: var(--bg-elements);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card-country .img {
+  min-height: 10rem;
+}
+.card-country .info {
+  padding: 1rem 1rem 2rem 1rem;
+}
+.card-country .info h2 {
+  margin-bottom: 1rem;
+}
+.card-country .info li {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+@media (width > 767px) {
+  .flex-column-sm {
+    flex-direction: row;
+  }
+  .controls .search {
+    align-items: center;
+    max-width: 600px;
+  }
+  .controls .filter {
+    margin: 0;
+    min-width: 12rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
